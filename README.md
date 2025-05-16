@@ -10,6 +10,18 @@
 
 **MyContact App** adalah aplikasi manajemen kontak yang elegan dan modern untuk Android. Simpan dan kelola kontak Anda dengan aman di cloud menggunakan Firebase Realtime Database, memastikan data Anda selalu dapat diakses di berbagai perangkat.
 
+## ⚠️ Security Note | Catatan Keamanan
+
+For security reasons, the `google-services.json` file is not included in this repository. You will need to:
+1. Create your own Firebase project
+2. Download your own google-services.json file
+3. Place it in the app/ directory
+
+Untuk alasan keamanan, file `google-services.json` tidak disertakan dalam repositori ini. Anda perlu:
+1. Membuat proyek Firebase Anda sendiri
+2. Mengunduh file google-services.json Anda
+3. Menempatkannya di direktori app/
+
 ## 🔥 Key Features | Fitur Utama
 
 - **🔒 Secure Authentication | Autentikasi Aman**: Login with email/password or Google account | Login dengan email/password atau akun Google
