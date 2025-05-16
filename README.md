@@ -4,61 +4,55 @@
 ![Firebase](https://img.shields.io/badge/Backend-Firebase-FFCA28?style=for-the-badge&logo=firebase)
 ![Java](https://img.shields.io/badge/Language-Java-007396?style=for-the-badge&logo=java)
 
-## ✨ Overview
+## ✨ Overview | Ikhtisar
 
 **MyContact App** is a sleek, modern contact management application built for Android. Securely store and manage your contacts in the cloud with Firebase Realtime Database integration, ensuring your data is always accessible across devices.
 
-![App Screenshot](https://via.placeholder.com/800x400?text=MyContact+App+Screenshot)
+**MyContact App** adalah aplikasi manajemen kontak yang elegan dan modern untuk Android. Simpan dan kelola kontak Anda dengan aman di cloud menggunakan Firebase Realtime Database, memastikan data Anda selalu dapat diakses di berbagai perangkat.
 
-## 🔥 Key Features
+## 🔥 Key Features | Fitur Utama
 
-- **🔒 Secure Authentication**: Login with email/password or Google account
-- **☁️ Cloud Storage**: All contacts stored in Firebase Realtime Database
-- **👤 User-Specific Data**: Each user sees only their own contacts
-- **🌈 Modern UI**: Beautiful, intuitive interface with material design elements
-- **🔄 Real-time Updates**: Changes sync instantly across devices
-- **🔍 Easy Management**: Add, edit, and delete contacts with ease
+- **🔒 Secure Authentication | Autentikasi Aman**: Login with email/password or Google account | Login dengan email/password atau akun Google
+- **☁️ Cloud Storage | Penyimpanan Cloud**: All contacts stored in Firebase Realtime Database | Semua kontak disimpan di Firebase Realtime Database
+- **👤 User-Specific Data | Data Khusus Pengguna**: Each user sees only their own contacts | Setiap pengguna hanya melihat kontak mereka sendiri
+- **🌈 Modern UI | UI Modern**: Beautiful, intuitive interface with material design elements | Antarmuka yang indah dan intuitif dengan elemen desain material
+- **🔄 Real-time Updates | Pembaruan Real-time**: Changes sync instantly across devices | Perubahan langsung disinkronkan ke semua perangkat
+- **🔍 Easy Management | Pengelolaan Mudah**: Add, edit, and delete contacts with ease | Tambah, edit, dan hapus kontak dengan mudah
 
-## 🚀 Getting Started
+## 🚀 Getting Started | Memulai
 
-1. Clone the repository
-2. Connect to your Firebase project
-3. Build and run the app
+1. Clone the repository | Clone repositori
+2. Connect to your Firebase project | Hubungkan ke proyek Firebase Anda
+3. Build and run the app | Build dan jalankan aplikasi
 
-## 🛠️ Technical Details
+## 🛠️ Technical Details | Detail Teknis
 
-- **Architecture**: MVVM (Model-View-ViewModel)
+- **Architecture | Arsitektur**: MVVM (Model-View-ViewModel)
 - **Backend**: Firebase Authentication & Realtime Database
-- **UI Components**: Material Design, CardView, RecyclerView
-- **Security**: User-specific data access rules
+- **UI Components | Komponen UI**: Material Design, CardView, RecyclerView
+- **Security | Keamanan**: User-specific data access rules | Aturan akses data khusus pengguna
 
-## 🔐 Security Features
+## 🔐 Security Features | Fitur Keamanan
 
-- Automatic logout when app terminates
-- Secure authentication with Firebase
-- Data isolation between users
-- Input validation and error handling
+- Automatic logout when app terminates | Logout otomatis saat aplikasi ditutup
+- Secure authentication with Firebase | Autentikasi aman dengan Firebase
+- Data isolation between users | Isolasi data antar pengguna
+- Input validation and error handling | Validasi input dan penanganan kesalahan
 
-## 📝 Future Enhancements
+## 📝 Future Enhancements | Pengembangan Masa Depan
 
-- Contact search functionality
-- Contact grouping and filtering
-- Profile picture support
-- Dark mode toggle
-- Contact sharing options
+- Contact search functionality | Fungsi pencarian kontak
+- Contact grouping and filtering | Pengelompokan dan penyaringan kontak
+- Profile picture support | Dukungan foto profil
+- Dark mode toggle | Pengalihan mode gelap
+- Contact sharing options | Opsi berbagi kontak
 
-## 📱 Screenshots
-
-<div style="display: flex; justify-content: space-between;">
-  <img src="https://via.placeholder.com/250x500?text=Login+Screen" width="30%" alt="Login Screen">
-  <img src="https://via.placeholder.com/250x500?text=Contact+List" width="30%" alt="Contact List">
-  <img src="https://via.placeholder.com/250x500?text=Add+Contact" width="30%" alt="Add Contact">
-</div>
-
-## 📄 License
+## 📄 License | Lisensi
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+Proyek ini dilisensikan di bawah Lisensi MIT - lihat file LICENSE untuk detail.
+
 ---
 
-Developed with ❤️ for Mobile Application Development course
+Developed with ❤️ for Mobile Application Development course | Dikembangkan dengan ❤️ untuk mata kuliah Pengembangan Aplikasi Mobile
