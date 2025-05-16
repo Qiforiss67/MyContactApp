@@ -14,7 +14,6 @@ public class MyContactApplication extends Application {
     public void onCreate() {
         super.onCreate();
         
-        // Set auto-logout preference to true by default
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         if (!prefs.contains(KEY_AUTO_LOGOUT)) {
             prefs.edit().putBoolean(KEY_AUTO_LOGOUT, true).apply();
@@ -24,13 +23,11 @@ public class MyContactApplication extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        // Sign out when app terminates if auto-logout is enabled
         if (getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).getBoolean(KEY_AUTO_LOGOUT, true)) {
             FirebaseAuth.getInstance().signOut();
         }
     }
     
-    // Method to force logout
     public static void forceLogout(Context context) {
         FirebaseAuth.getInstance().signOut();
     }

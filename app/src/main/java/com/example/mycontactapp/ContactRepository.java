@@ -23,15 +23,12 @@ public class ContactRepository {
     public ContactRepository() {
         allContacts = new MutableLiveData<>(new ArrayList<>());
         
-        // Get current user ID
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         userId = currentUser != null ? currentUser.getUid() : "";
         
-        // Initialize Firebase Database reference
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         contactsRef = database.getReference("contacts");
         
-        // Load contacts for current user
         loadContacts();
     }
 
@@ -54,7 +51,6 @@ public class ContactRepository {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            // Handle error
                         }
                     });
         }

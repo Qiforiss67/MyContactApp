@@ -8,7 +8,6 @@ public class ContactEntity {
     private String group;
     private String userId;
 
-    // Required empty constructor for Firebase
     public ContactEntity() {
     }
 

@@ -23,13 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         
-        // Check if user is signed in
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
-            // Not signed in, launch the Login activity
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
@@ -37,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         
         setContentView(R.layout.activity_main);
 
-        // Set welcome message with user's email
         TextView welcomeText = findViewById(R.id.tv_welcome);
         TextView contactCountText = findViewById(R.id.tv_contact_count);
         String userEmail = currentUser.getEmail();
@@ -46,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycle_contact);
         
-        // Setup floating action buttons
         findViewById(R.id.fab_logout).setOnClickListener(v -> logout());
         findViewById(R.id.fab_add).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddContactActivity.class);
@@ -58,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(contactAdapter);
 
         try {
-            // Initialize Firebase ViewModel directly
             contactViewModel = new ContactViewModel();
             contactViewModel.getAllContacts().observe(this, contacts -> {
                 if (contacts != null) {
                     contactAdapter.setContacts(contacts);
                     
-                    // Update contact count text
                     int count = contacts.size();
                     String countText = count + " kontak tersimpan";
                     if (count == 0) {
@@ -108,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("Keluar Aplikasi")
                 .setMessage("Apakah Anda ingin keluar dari aplikasi?")
                 .setPositiveButton("Ya", (dialog, which) -> {
-                    // Sign out from Firebase
                     FirebaseAuth.getInstance().signOut();
                     finish();
                 })
@@ -121,9 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("Logout")
                 .setMessage("Apakah Anda yakin ingin logout?")
                 .setPositiveButton("Ya", (dialog, which) -> {
-                    // Sign out from Firebase
                     FirebaseAuth.getInstance().signOut();
-                    // Redirect to login screen
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     finish();
                 })
