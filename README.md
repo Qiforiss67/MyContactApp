@@ -47,6 +47,14 @@
 - Dark mode toggle | Pengalihan mode gelap
 - Contact sharing options | Opsi berbagi kontak
 
+## 📱 Screenshots
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="![Image](https://github.com/user-attachments/assets/073e291b-7338-4578-bd49-e8c0cf601486)" width="30%" alt="Login Screen">
+  <img src="https://via.placeholder.com/250x500?text=Contact+List" width="30%" alt="Contact List">
+  <img src="https://via.placeholder.com/250x500?text=Add+Contact" width="30%" alt="Add Contact">
+</div>
+
 ## 📄 License | Lisensi
 
 This project is licensed under the MIT License - see the LICENSE file for details.
