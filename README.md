@@ -50,17 +50,9 @@
 ## 📱 Screenshots
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="![Image](https://github.com/user-attachments/assets/073e291b-7338-4578-bd49-e8c0cf601486)" width="30%" alt="Login Screen">
-  <img src="https://via.placeholder.com/250x500?text=Contact+List" width="30%" alt="Contact List">
-  <img src="https://via.placeholder.com/250x500?text=Add+Contact" width="30%" alt="Add Contact">
+  <img src="https://raw.githubusercontent.com/username/MycontactApp/main/screenshots/login_screen.jpg" width="30%" alt="Login Screen">
+  <img src="https://raw.githubusercontent.com/username/MycontactApp/main/screenshots/contact_list.jpg" width="30%" alt="Contact List">
+  <img src="https://raw.githubusercontent.com/username/MycontactApp/main/screenshots/add_contact.jpg" width="30%" alt="Add Contact">
 </div>
 
 ## 📄 License | Lisensi
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Proyek ini dilisensikan di bawah Lisensi MIT - lihat file LICENSE untuk detail.
-
----
-
-Developed with ❤️ for Mobile Application Development course | Dikembangkan dengan ❤️ untuk mata kuliah Pengembangan Aplikasi Mobile
