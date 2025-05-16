@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyContact App</string>
+    <string name="app_name_display">MyContact App</string>
+    <string name="welcome_message">Selamat Datang di MyContact App</string>
+    <string name="no_contacts">Belum ada kontak tersimpan</string>
+    <string name="one_contact">1 kontak tersimpan</string>
+    <string name="multiple_contacts">%d kontak tersimpan</string>
+</resources>
