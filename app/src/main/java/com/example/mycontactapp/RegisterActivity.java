@@ -20,6 +20,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**
+ * Activity untuk menangani proses registrasi pengguna baru
+ * Menyediakan form untuk membuat akun baru dengan email dan password
+ */
 public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = "RegisterActivity";
 
@@ -30,15 +34,19 @@ public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    /**
+     * Inisialisasi activity dan komponen UI
+     * @param savedInstanceState Bundle yang berisi data status sebelumnya
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Initialize Firebase Auth
+        // Inisialisasi Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Initialize views
+        // Inisialisasi view
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.password);
         confirmPasswordField = findViewById(R.id.confirm_password);
@@ -46,13 +54,17 @@ public class RegisterActivity extends AppCompatActivity {
         loginLink = findViewById(R.id.login_link);
         progressBar = findViewById(R.id.progress_bar);
 
-        // Set click listeners
+        // Mengatur click listener
         registerButton.setOnClickListener(v -> createAccount());
         loginLink.setOnClickListener(v -> {
-            finish(); // Go back to login activity
+            finish(); // Kembali ke activity login
         });
     }
 
+    /**
+     * Membuat akun baru dengan email dan password
+     * Memvalidasi input dan mengirim permintaan registrasi ke Firebase
+     */
     private void createAccount() {
         if (!validateForm()) {
             return;
@@ -67,14 +79,14 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+                            // Registrasi berhasil, perbarui UI dengan informasi pengguna
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
-                            // If sign in fails, display a message to the user.
+                            // Jika registrasi gagal, tampilkan pesan ke pengguna
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(RegisterActivity.this, "Registration failed: " + task.getException().getMessage(),
+                            Toast.makeText(RegisterActivity.this, "Registrasi gagal: " + task.getException().getMessage(),
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
@@ -83,12 +95,16 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
+    /**
+     * Memvalidasi input form registrasi
+     * @return true jika form valid, false jika tidak
+     */
     private boolean validateForm() {
         boolean valid = true;
 
         String email = emailField.getText().toString();
         if (TextUtils.isEmpty(email)) {
-            emailField.setError("Required.");
+            emailField.setError("Wajib diisi.");
             valid = false;
         } else {
             emailField.setError(null);
@@ -96,10 +112,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         String password = passwordField.getText().toString();
         if (TextUtils.isEmpty(password)) {
-            passwordField.setError("Required.");
+            passwordField.setError("Wajib diisi.");
             valid = false;
         } else if (password.length() < 6) {
-            passwordField.setError("Password must be at least 6 characters.");
+            passwordField.setError("Password minimal 6 karakter.");
             valid = false;
         } else {
             passwordField.setError(null);
@@ -107,10 +123,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         String confirmPassword = confirmPasswordField.getText().toString();
         if (TextUtils.isEmpty(confirmPassword)) {
-            confirmPasswordField.setError("Required.");
+            confirmPasswordField.setError("Wajib diisi.");
             valid = false;
         } else if (!confirmPassword.equals(password)) {
-            confirmPasswordField.setError("Passwords do not match.");
+            confirmPasswordField.setError("Password tidak cocok.");
             valid = false;
         } else {
             confirmPasswordField.setError(null);
@@ -119,20 +135,30 @@ public class RegisterActivity extends AppCompatActivity {
         return valid;
     }
 
+    /**
+     * Memperbarui UI berdasarkan status registrasi
+     * @param user Objek FirebaseUser jika registrasi berhasil, null jika gagal
+     */
     private void updateUI(FirebaseUser user) {
         hideProgressBar();
         if (user != null) {
-            // User is registered, go to login activity
-            Toast.makeText(RegisterActivity.this, "Registration successful! Please login.", Toast.LENGTH_SHORT).show();
+            // Pengguna berhasil registrasi, pindah ke activity login
+            Toast.makeText(RegisterActivity.this, "Registrasi berhasil! Silakan login.", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             finish();
         }
     }
 
+    /**
+     * Menampilkan indikator loading
+     */
     private void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Menyembunyikan indikator loading
+     */
     private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);
     }
